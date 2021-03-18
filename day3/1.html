@@ -5,17 +5,50 @@
 </head>
 
 <body>
-    <input type="text" id="input"> <p id="result"></p>
+    first <input type="text" id="input1"> 
+    second<input type="text" id="input2">
+    <p>0</p>
+    <p id="result0"></p>
+    <p>1</p>
+    <p id="result1"></p>
+    <p id="result2"></p>
+    <p id="result3"></p>
     <script>
-    result.innerHTML = 'no data';
-    input.oninput = function() {
-        //result.innerHTML = input.value;
-        //var inputVal
-        result.innerHTML = 'no data';
-        if (input.value.length >1){
-            result.innerHTML = input.value+' is '+input.value.length ;
-        }
+
+    function calc(){
+    var calcArr=['+','-','*','/'];
+    for(var i=0; i<4; i++){
+        result1.innerHTML = input1.value+ calcArr[i] + input2.value+'='+eval(input1.value+calcArr[i]+input2.value);
+    }
+}
+
+    input1.oninput = function() {
+    if (input1.value>=0){
+        calc();
+    }else{
+        calc();
+        result0.innerHTML='please write again';
+    }
+
+
+
+        //result1.innerHTML = input1.value;
     };
+
+    input2.oninput = function() {
+        if (input2.value>=0){
+            calc();
+    }else{
+        result1.innerHTML ='please write again';
+    }
+        //result2.innerHTML = input2.value;
+    };
+
+
+    
+
+
+
     </script>
 
 </body>
