@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+</head>
+
+<body>
+    <input type="text" id="input"> <p id="result"></p>
+    <script>
+    result.innerHTML = 'no data';
+    input.oninput = function() {
+        //result.innerHTML = input.value;
+        //var inputVal
+        result.innerHTML = 'no data';
+        if (input.value.length >1){
+            result.innerHTML = input.value+' is '+input.value.length ;
+        }
+    };
+    </script>
+
+</body>
+</html>
