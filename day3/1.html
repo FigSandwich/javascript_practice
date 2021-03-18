@@ -17,8 +17,10 @@
 
     function calc(){
     var calcArr=['+','-','*','/'];
+    var results=[];
     for(var i=0; i<4; i++){
-        result1.innerHTML = input1.value+ calcArr[i] + input2.value+'='+eval(input1.value+calcArr[i]+input2.value);
+        results.push(document.getElementById("result"+i))
+        results[i].innerHTML = input1.value+ calcArr[i] + input2.value+'='+eval(input1.value+calcArr[i]+input2.value);
     }
 }
 
@@ -26,7 +28,6 @@
     if (input1.value>=0){
         calc();
     }else{
-        calc();
         result0.innerHTML='please write again';
     }
 
